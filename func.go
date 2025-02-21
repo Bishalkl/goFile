@@ -1,35 +1,56 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-)
+import "fmt"
+
+// Function with parameter and return type
+func add(a int, b int) int {
+	return a + b
+}
+
+
+// Function with multiple return value
+func divide( a, b int) (int, int) {
+	quotient := a / b
+	reminder := a % b
+
+	return quotient, reminder
+}
+
+
+// Function Named Return values
+func rectangle(length, width int) (area int, perimeter int) {
+	area = length * width
+	perimeter = 2 * ( length + width)
+	return 
+}
+
+// Function Variadic Function 
+func sum(numbers ...int) int {
+	total :=0
+	for _, num:= range numbers {
+		total += num
+	}
+
+	return total
+} 
 
 func main() {
-	printValue := "Hello world"
-	printMe(printValue)
+	// result for add
+	result := add(12, 34)
+	fmt.Println(result)
 
-	numerator := 11
-	denominator := 0
+	fmt.Println()
 
-	result, remainder, err := intDivision(numerator, denominator)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	// result for divide
+	q, r := divide(12, 6)
+	fmt.Println("Quotient:", q, "Remainder:", r)
 
-	fmt.Printf("The result of the integer division is %v with remainder %v\n", result, remainder)
-}
+	fmt.Println()
 
-func printMe(printValue string) {
-	fmt.Println(printValue)
-}
+	// result for rectangle area and perimeter
+	a, p := rectangle(12, 34)
+	fmt.Println("Area is ", a,  "." , "Perimeter is ", p)
 
-func intDivision(numerator int, denominator int) (int, int, error) {
-	if denominator == 0 {
-		return 0, 0, errors.New("cannot divide by zero")
-	}
-	result := numerator / denominator
-	remainder := numerator % denominator
-	return result, remainder, nil
+	// result of sum of numbers
+	fmt.Println("The total sum is ", sum(1,1,1,1,1,1,1,1,1), ".")
 }
