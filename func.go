@@ -53,4 +53,9 @@ func main() {
 
 	// result of sum of numbers
 	fmt.Println("The total sum is ", sum(1,1,1,1,1,1,1,1,1), ".")
+
+	// defer 
+	defer fmt.Println("This will be executed one the program ")
+	defer fmt.Println("This will be executed two the program ")
+	defer fmt.Println("This will be executed three the program ")
 }
