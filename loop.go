@@ -50,6 +50,17 @@ func main() {
 	fmt.Println()
 
 
+	// nested loop
+	for i:=1; i <=3; i++{
+		for j:=1; j<=3; j++ {
+			fmt.Printf("(%d,%d)", i, j)
+		}
+		fmt.Println()
+	}
+
+	fmt.Println()
+
+
 	// break statement
 	for i:=0; i < 5; i++ {
 		if i == 3 {
