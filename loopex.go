@@ -68,4 +68,12 @@ func main() {
 	// 	fmt.Printf("Key:  %s, Value: %d\n", key, value)
 	// }
 
+	// // Print a 5*5 square of * using loops
+	// for i := 0; i < 5; i++ { //for outerloop
+	// 	for j := 0; j < 5; j++ {
+	// 		fmt.Print("* ")
+	// 	}
+	// 	fmt.Println()
+	// }
+
 }
