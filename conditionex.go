@@ -2,6 +2,18 @@ package main
 
 import "fmt"
 
+// function for check input is valid or not
+func validInput(prompt string) int {
+	var num int
+	for {
+		fmt.Print(prompt)
+		if _, err := fmt.Scanln(&num); err == nil {
+			return num
+		}
+		fmt.Println("Invalid input:Please enter a valid number")
+	}
+}
+
 func main() {
 	// var num int
 	// // ask to input the number
@@ -97,5 +109,22 @@ func main() {
 	// } else {
 	// 	fmt.Println("The third number is the largest.")
 	// }
+
+	// ask for input
+	marks := validInput("Please enter your marks: ")
+
+	// check with switch statement
+	switch {
+	case marks <= 100 && marks >= 90:
+		fmt.Println("Grade A")
+	case marks >= 80 && marks <= 89:
+		fmt.Println("Grade B")
+	case marks >= 70 && marks <= 79:
+		fmt.Println("Grade C")
+	case marks >= 60 && marks <= 69:
+		fmt.Println("Grade D")
+	default:
+		fmt.Println("Grade F")
+	}
 
 }
