@@ -25,18 +25,29 @@ func main() {
 
 	// fmt.Println(sum)
 
-	var i int
-	for {
-		fmt.Print("Enter a number (0 to exit): ")
-		if _, err := fmt.Scanln(&i); err != nil {
-			fmt.Println("Invalid input. Please enter an integer")
-			continue
-		}
+	// var i int
+	// for {
+	// 	fmt.Print("Enter a number (0 to exit): ")
+	// 	if _, err := fmt.Scanln(&i); err != nil {
+	// 		fmt.Println("Invalid input. Please enter an integer")
+	// 		continue
+	// 	}
 
-		if i == 0 {
-			fmt.Println("Exiting program...")
-			break
-		}
+	// 	if i == 0 {
+	// 		fmt.Println("Exiting program...")
+	// 		break
+	// 	}
+	// }
+
+	var num int
+	fmt.Printf("Enter a number: ")
+	if _, err := fmt.Scanln(&num); err != nil {
+		fmt.Println("Invalid input: Please enter an integer")
+		return
+	}
+	// now loop for multiplication
+	for i := 1; i <= 10; i++ {
+		fmt.Printf("%d * %d = %d\n", num, i, num*i)
 	}
 
 }
