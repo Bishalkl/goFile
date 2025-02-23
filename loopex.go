@@ -1,6 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+func dosomethingwithrune(r rune) {
+	fmt.Println(string(r))
+}
 
 func main() {
 	// //print number from 1 to 20 using a for loop
@@ -39,15 +45,27 @@ func main() {
 	// 	}
 	// }
 
-	var num int
-	fmt.Printf("Enter a number: ")
-	if _, err := fmt.Scanln(&num); err != nil {
-		fmt.Println("Invalid input: Please enter an integer")
+	// var num int
+	// fmt.Printf("Enter a number: ")
+	// if _, err := fmt.Scanln(&num); err != nil {
+	// 	fmt.Println("Invalid input: Please enter an integer")
+	// 	return
+	// }
+	// // now loop for multiplication
+	// for i := 1; i <= 10; i++ {
+	// 	fmt.Printf("%d * %d = %d\n", num, i, num*i)
+	// }
+
+	var str string
+	fmt.Print("Enter a string: ")
+	if _, err := fmt.Scan(&str); err != nil {
+		println("Invalid input: Please enter a string value")
 		return
 	}
-	// now loop for multiplication
-	for i := 1; i <= 10; i++ {
-		fmt.Printf("%d * %d = %d\n", num, i, num*i)
+
+	// creating function for print string
+	for _, r := range str {
+		dosomethingwithrune(r)
 	}
 
 }
