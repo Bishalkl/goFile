@@ -78,12 +78,25 @@ func main() {
 
 	// Print a right-angled triangle of numbers
 	//for outer loop
-	for i := 1; i <= 5; i++ {
-		// for inner loop
-		for j := 1; j <= i; j++ {
-			fmt.Printf("%d ", j)
+	// for i := 1; i <= 5; i++ {
+	// 	// for inner loop
+	// 	for j := 1; j <= i; j++ {
+	// 		fmt.Printf("%d ", j)
+	// 	}
+	// 	fmt.Println()
+	// }
+
+	// FizzBuzz challenge
+	for i := 1; i <= 50; i++ {
+		if i%3 == 0 && i%5 == 0 {
+			println("FizzBuzz")
+		} else if i%3 == 0 {
+			println("Fizz")
+		} else if i%5 == 0 {
+			println("Buzz")
+		} else {
+			println(i)
 		}
-		fmt.Println()
 	}
 
 }
