@@ -76,4 +76,14 @@ func main() {
 	// 	fmt.Println()
 	// }
 
+	// Print a right-angled triangle of numbers
+	//for outer loop
+	for i := 1; i <= 5; i++ {
+		// for inner loop
+		for j := 1; j <= i; j++ {
+			fmt.Printf("%d ", j)
+		}
+		fmt.Println()
+	}
+
 }
