@@ -56,16 +56,16 @@ func main() {
 	// 	fmt.Printf("%d * %d = %d\n", num, i, num*i)
 	// }
 
-	var str string
-	fmt.Print("Enter a string: ")
-	if _, err := fmt.Scan(&str); err != nil {
-		println("Invalid input: Please enter a string value")
-		return
-	}
+	// var slice1 = []int{3, 7, 2, 9, 5}
+	// var sum int = 0
+	// for _, r := range slice1 {
+	// 	sum += r
+	// }
+	// fmt.Printf("Sum: %d", sum)
 
-	// creating function for print string
-	for _, r := range str {
-		dosomethingwithrune(r)
-	}
+	// myMap := map[string]int{"a": 10, "b": 20, "c": 30}
+	// for key, value := range myMap {
+	// 	fmt.Printf("Key:  %s, Value: %d\n", key, value)
+	// }
 
 }
