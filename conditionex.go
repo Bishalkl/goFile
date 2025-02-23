@@ -111,20 +111,27 @@ func main() {
 	// }
 
 	// ask for input
-	marks := validInput("Please enter your marks: ")
+	// marks := validInput("Please enter your marks: ")
 
-	// check with switch statement
-	switch {
-	case marks <= 100 && marks >= 90:
-		fmt.Println("Grade A")
-	case marks >= 80 && marks <= 89:
-		fmt.Println("Grade B")
-	case marks >= 70 && marks <= 79:
-		fmt.Println("Grade C")
-	case marks >= 60 && marks <= 69:
-		fmt.Println("Grade D")
-	default:
-		fmt.Println("Grade F")
+	// // check with switch statement
+	// switch {
+	// case marks <= 100 && marks >= 90:
+	// 	fmt.Println("Grade A")
+	// case marks >= 80 && marks <= 89:
+	// 	fmt.Println("Grade B")
+	// case marks >= 70 && marks <= 79:
+	// 	fmt.Println("Grade C")
+	// case marks >= 60 && marks <= 69:
+	// 	fmt.Println("Grade D")
+	// default:
+	// 	fmt.Println("Grade F")
+	// }
+
+	year := validInput("Please enter a year number: ")
+	if (year%4 == 0 && year%100 != 0) || (year%400 == 0) {
+		fmt.Println("It is leap year ")
+	} else {
+		fmt.Println("it is not leap year")
 	}
 
 }
