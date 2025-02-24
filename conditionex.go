@@ -136,35 +136,60 @@ func main() {
 	// 	fmt.Println("it is not leap year")
 	// }
 
-	// creating a calculator switch Case
-	num1 := validInput("Please enter the first number: ")
-	num2 := validInput("Please enter the second number: ")
+	// // creating a calculator switch Case
+	// num1 := validInput("Please enter the first number: ")
+	// num2 := validInput("Please enter the second number: ")
 
-	// Asking for operation
-	fmt.Print("Please enter a operation (+, -, *, /): ")
-	var operation string
-	if _, err := fmt.Scanln(&operation); err != nil {
-		fmt.Println("Invalid input: Please enter valid operation character.")
+	// // Asking for operation
+	// fmt.Print("Please enter a operation (+, -, *, /): ")
+	// var operation string
+	// if _, err := fmt.Scanln(&operation); err != nil {
+	// 	fmt.Println("Invalid input: Please enter valid operation character.")
+	// 	return
+	// }
+
+	// // using switch statement
+	// switch operation {
+	// case "+":
+	// 	fmt.Printf("The result is %d.\n", num1+num2)
+	// case "-":
+	// 	fmt.Printf("The result is %d.\n", num1-num2)
+	// case "*":
+	// 	fmt.Printf("The result is %d.\n", num1*num2)
+	// case "/":
+	// 	// Checking division by zero
+	// 	if num2 == 0 {
+	// 		fmt.Println("Error: Division by zero is not allowed.")
+	// 	} else {
+	// 		fmt.Printf("The result is %d.\n", num1/num2)
+	// 	}
+	// default:
+	// 	fmt.Printf("Your operation '%s' is not valid!\n", operation)
+	// }
+
+	// Triangle Type Identifier
+	// equilateral triangle having all side equal
+	// Isosceles (two sides equal)
+	// Scalene (all sides different)
+	// Not a Triangle (if the sum of any two sides is less than or equal to the third sides)
+
+	side1 := validInput("Please enter the first side: ")
+	side2 := validInput("Please enter the second side: ")
+	side3 := validInput("Please enter the third side: ")
+
+	// checking for it is triangle or not
+	if (side1+side2) <= side3 || (side2+side3) <= side1 || (side3+side1) <= side2 {
+		fmt.Println("Not triangle!")
 		return
 	}
 
-	// using switch statement
-	switch operation {
-	case "+":
-		fmt.Printf("The result is %d.\n", num1+num2)
-	case "-":
-		fmt.Printf("The result is %d.\n", num1-num2)
-	case "*":
-		fmt.Printf("The result is %d.\n", num1*num2)
-	case "/":
-		// Checking division by zero
-		if num2 == 0 {
-			fmt.Println("Error: Division by zero is not allowed.")
-		} else {
-			fmt.Printf("The result is %d.\n", num1/num2)
-		}
-	default:
-		fmt.Printf("Your operation '%s' is not valid!\n", operation)
+	// check which type of triangle
+	if side1 == side2 && side1 == side3 {
+		fmt.Println("It is Equilateral triangle.")
+	} else if side1 == side2 || side2 == side3 || side3 == side1 {
+		fmt.Println("It is Isosceles triangle.")
+	} else {
+		fmt.Println("It is Scalene triangle.")
 	}
 
 }
