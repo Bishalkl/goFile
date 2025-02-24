@@ -81,6 +81,29 @@ func totalVowels(string string) func() int {
 	}
 }
 
+// Create a function that checks if a given number is prime or not.
+func checkPrime(num int) bool {
+
+	if num <= 1 {
+		return false
+	}
+	for i := 2; i*i <= num; i++ {
+		if num%i == 0 {
+			return false
+		}
+	}
+	return true
+}
+
+// Write a function that accepts a string and an integer and retgurn the string repeated that many times.
+func repString(strings string, num int) string {
+	var repstring string
+	for i := 0; i < num; i++ {
+		repstring += strings
+	}
+	return repstring
+}
+
 func main() {
 	x, y := 10, 20
 	fmt.Println("Before swapping:", x, y) // Output: Before swapping: 10 20
@@ -100,4 +123,8 @@ func main() {
 
 	// Call the function to count vowels
 	fmt.Println("Number of vowels:", countVowels()) // Output: 4
+
+	// Test the repeatString function
+	fmt.Println(repString("Go", 3))    // Output: GoGoGo
+	fmt.Println(repString("Hello", 12)) // Output: HelloHello
 }
