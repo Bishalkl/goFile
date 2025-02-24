@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"strings"
 )
 
 // Write a function that takes two numbers and returns their sum, difference, product, and quotient as multiple return values.
@@ -53,10 +54,50 @@ func swapNum(a, b *int) {
 	*a, *b = *b, *a
 }
 
+// Implement a function that return another function that generates fibonacci numbers
+func fibonacciGenerator() func() int {
+	a, b := 0, 1
+	return func() int {
+		next := a
+		a, b = b, a+b
+		return next
+	}
+}
+
+// Write a function that takes a string and returns a function that counts the number of vowels in that string.
+func totalVowels(string string) func() int {
+	// conver the string into lowercase
+	s := strings.ToLower(string)
+
+	return func() int {
+		vowelCounts := 0
+		for _, char := range s {
+			if char == 'a' || char == 'e' || char == 'i' || char == 'o' || char == 'u' {
+				vowelCounts++
+			}
+
+		}
+		return vowelCounts
+	}
+}
+
 func main() {
 	x, y := 10, 20
 	fmt.Println("Before swapping:", x, y) // Output: Before swapping: 10 20
 
 	swapNum(&x, &y)                      // Passing addresses
 	fmt.Println("After swapping:", x, y) // Output: After swapping: 20 10
+
+	fib := fibonacciGenerator() // Create a Fibonacci generator
+
+	// Print the first 10 Fibonacci numbers
+	for i := 0; i < 10; i++ {
+		fmt.Println(fib())
+	}
+
+	// Create a vowel counter function for a given string
+	countVowels := totalVowels("Hello, GoLang!")
+
+	// Call the function to count vowels
+	fmt.Println("Number of vowels:", countVowels()) // Output: 4
 }
